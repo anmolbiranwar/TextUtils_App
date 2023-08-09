@@ -1,8 +1,12 @@
 import React from 'react'
 
 export default function About() {
+  let myStyle={
+    color:"white",
+    backgroundColor:"black"
+  }
   return (
-        <div class="accordion" id="accordionExample">
+        <div class="accordion" id="accordionExample" style={myStyle}>
           <h2 className='my-3'>About Us</h2>
       <div class="accordion-item">
         <h2 class="accordion-header">
@@ -40,7 +44,9 @@ export default function About() {
           </div>
         </div>
       </div>
-      <button type='button' className='btn btn-primary my-3'>Enable Dark Mode</button>
+     <div className="container my-3">
+     <button type='button' className='btn btn-primary'>Enable Dark Mode</button>
+     </div>
     </div>
   )
 }
