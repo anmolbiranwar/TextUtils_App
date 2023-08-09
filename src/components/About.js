@@ -6,7 +6,7 @@ export default function About() {
     backgroundColor:"black"
   }
   return (
-        <div class="accordion" id="accordionExample" style={myStyle}>
+        <div class="accordion px-3 py-3" id="accordionExample" style={myStyle}>
           <h2 className='my-3'>About Us</h2>
       <div class="accordion-item">
         <h2 class="accordion-header">
