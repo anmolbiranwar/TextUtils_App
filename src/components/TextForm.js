@@ -13,6 +13,10 @@ const TextForm = (props) => {
         let newText="";
         setText(newText);
     }
+    const show=()=>{
+        let newText=text;
+        setText(newText);
+    }
     const handleOnChange=(event)=>{
         setText(event.target.value);
     }
@@ -27,13 +31,15 @@ const TextForm = (props) => {
     <button className="btn btn-primary mx-2" onClick={handleUpClick}>Convert to Uppercase</button>
     <button className="btn btn-primary mx-2" onClick={handleLowClick}>Convert to Lowercase</button>
     <button className="btn btn-primary" onClick={clear}>Clear</button>
+    <button className="btn btn-primary" onClick={show}>show</button>
+    
 
     </div>
     <div className="container">
         <h2>Your Text Summary</h2>
         <p>{text.split(" ").length} words {text.length} characters</p>
         <h2>Preview</h2>
-        <p>{text}</p>
+        <p>{show}</p>
     </div>
    </>
   )
