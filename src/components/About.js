@@ -40,7 +40,7 @@ export default function About() {
           </div>
         </div>
       </div>
-      <button className='my-3'>Enable Dark Mode</button>
+      <button type='button' className='btn btn-primary my-3'>Enable Dark Mode</button>
     </div>
   )
 }
