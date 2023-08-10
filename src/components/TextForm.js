@@ -13,14 +13,20 @@ const TextForm = (props) => {
         let newText="";
         setText(newText);
     }
-    const show=()=>{
-        let newText=text;
-        setText(newText);
+    const handleExtraSpaces=()=>{
+      let newText=text.split(/[ ]+/);
+      setText(newText.join(" "))
     }
     const handleOnChange=(event)=>{
         setText(event.target.value);
     }
-    const [text, setText]= useState("Enter text here..");
+    const handleCopy=()=>{
+        var text=document.getElementById("myBox");
+        text.select();
+        navigator.clipboard.writeText(text.value);
+
+    }
+    const [text, setText]= useState("");
   return (
    <>
     <div className="container">
@@ -30,8 +36,9 @@ const TextForm = (props) => {
     </div>
     <button className="btn btn-primary mx-2" onClick={handleUpClick}>Convert to Uppercase</button>
     <button className="btn btn-primary mx-2" onClick={handleLowClick}>Convert to Lowercase</button>
-    <button className="btn btn-primary" onClick={clear}>Clear</button>
-    <button className="btn btn-primary" onClick={show}>show</button>
+    <button className="btn btn-primary mx-2" onClick={clear}>Clear</button>
+    <button className="btn btn-primary mx-2" onClick={handleExtraSpaces}>Remove Extra Spaces</button>
+    <button className="btn btn-primary" onClick={handleCopy}>Copy Text</button>
     
 
     </div>
@@ -39,7 +46,6 @@ const TextForm = (props) => {
         <h2>Your Text Summary</h2>
         <p>{text.split(" ").length} words {text.length} characters</p>
         <h2>Preview</h2>
-        <p>{show}</p>
     </div>
    </>
   )
