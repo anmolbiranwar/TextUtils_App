@@ -19,7 +19,7 @@ const toggleMode=()=>{
   return (
    <>
     <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode}/>
-    <Alert />
+    <Alert alert="This is alert"/>
     <div className='container my-3'>
       <TextForm heading="Enter the text to analyze" mode={mode} />
       {/* <About /> */}
