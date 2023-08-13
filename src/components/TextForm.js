@@ -1,30 +1,35 @@
 import React, { useState } from 'react'
 
 const TextForm = (props) => {
+    const handleOnChange=(event)=>{
+        setText(event.target.value);
+    }
     const handleUpClick=()=>{
         let newText=text.toUpperCase();
         setText(newText);
+        props.showAlert(" Converted to Uppercase!","success");
     }
     const handleLowClick=()=>{
         let newText=text.toLowerCase();
         setText(newText);
+        props.showAlert(" Converted to Lowercase!","success");
     }
     const clear=()=>{
         let newText="";
         setText(newText);
+        props.showAlert(" Text Cleared!","success");
     }
     const handleExtraSpaces=()=>{
       let newText=text.split(/[ ]+/);
-      setText(newText.join(" "))
+      setText(newText.join(" "));
+      props.showAlert(" Extra spaces removed!","success");
     }
-    const handleOnChange=(event)=>{
-        setText(event.target.value);
-    }
+   
     const handleCopy=()=>{
         var text=document.getElementById("myBox");
         text.select();
         navigator.clipboard.writeText(text.value);
-
+        props.showAlert(" Copied to Clipboard!","success");
     }
     const [text, setText]= useState("");
   return (
