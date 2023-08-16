@@ -50,6 +50,7 @@ const TextForm = (props) => {
     <div className="container" style={{color: props.mode==='dark'?'white':'#042743'}}>
         <h2>Your Text Summary</h2>
         <p>{text.split(" ").filter((element)=>{return element.length!=0}).length} words {text.length} characters</p>
+        <p>{0.008* text.split(" ").filter((element)=>{return element.length!=0}).length} Minutes read</p>
         <h2>Preview</h2>
         <p>{text.length>0?text:"Enter something in the textbox above to preview it here"}</p>
     </div>
