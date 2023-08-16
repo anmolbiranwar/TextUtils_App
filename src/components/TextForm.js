@@ -35,7 +35,7 @@ const TextForm = (props) => {
   return (
    <>
     <div className="container" style={{color: props.mode==='dark'?'white':'#042743'}}>
-    <h2>{props.heading}</h2>
+    <h2 className='mb-3'>{props.heading}</h2>
     <div className='mb-3'>
         <textarea className="form-control" value={text} style={{backgroundColor: props.mode==='dark'?'#13466e':'white', color: props.mode==='dark'?'white':'#042743'}} onChange={handleOnChange} id="myBox" rows="8"></textarea>
     </div>
