@@ -10,7 +10,7 @@ export default function About(props) {
       backgroundColor: props.mode ==='dark'?'rgb(36 74 104)':'white'
     }
   return (
-        <div className="accordion px-3 py-3" id="accordionExample" style={myStyle}>
+        <div className="accordion px-3 py-3" id="accordionExample" style={{color: props.mode === 'dark'? 'white':'#042743'}}>
           <h2 className='my-3'>About Us</h2>
       <div className="accordion-item" style={myStyle}>
         <h2 className="accordion-header">
